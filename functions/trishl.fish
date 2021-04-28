@@ -32,7 +32,7 @@ function trishl -d 'List the contents of the trashcan'
 			# Everything is put together as an element in the list 'table'. The \t separator will be used by column command.
 			set -a table (string join '\t' [$index] $type $itemlist[$index] $path'\n')
 		end
-		string trim (echo -e $table) | column -t -s (printf \t) -N Index,Type,Name,'Original Path' -W Name,'Original Path' 
+		string trim (echo -e $table) | column -t -s (printf \t) # -N Index,Type,Name,'Original Path' -W Name,'Original Path' 
 
 		return
 	end
